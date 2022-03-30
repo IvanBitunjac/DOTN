@@ -1,0 +1,7 @@
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\bin\Debug\Predavanje4-Delegati.exe.config
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\bin\Debug\Predavanje4-Delegati.exe
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\bin\Debug\Predavanje4-Delegati.pdb
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\obj\Debug\Predavanje4-Delegati.csproj.AssemblyReference.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\obj\Debug\Predavanje4-Delegati.csproj.CoreCompileInputs.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\obj\Debug\Predavanje4-Delegati.exe
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje4-Delegati\obj\Debug\Predavanje4-Delegati.pdb

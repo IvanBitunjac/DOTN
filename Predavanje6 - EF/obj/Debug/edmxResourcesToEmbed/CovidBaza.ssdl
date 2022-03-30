@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DOTNPredavanje6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Drzave">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kratica" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Slucajevi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrojZarazenih" Type="int" Nullable="false" />
+    <Property Name="BrojUmrlih" Type="int" Nullable="false" />
+    <Property Name="BrojIzlijecenih" Type="int" Nullable="false" />
+    <Property Name="DrzavaId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Slucajevi__Drzav__267ABA7A">
+    <End Role="Drzave" Type="Self.Drzave" Multiplicity="1" />
+    <End Role="Slucajevi" Type="Self.Slucajevi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drzave">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slucajevi">
+        <PropertyRef Name="DrzavaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DOTNPredavanje6ModelStoreContainer">
+    <EntitySet Name="Drzave" EntityType="Self.Drzave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slucajevi" EntityType="Self.Slucajevi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Slucajevi__Drzav__267ABA7A" Association="Self.FK__Slucajevi__Drzav__267ABA7A">
+      <End Role="Drzave" EntitySet="Drzave" />
+      <End Role="Slucajevi" EntitySet="Slucajevi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

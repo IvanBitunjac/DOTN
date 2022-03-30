@@ -1,0 +1,22 @@
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\bin\Debug\Predavanje 4.exe.config
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\bin\Debug\Predavanje 4.exe
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\bin\Debug\Predavanje 4.pdb
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.csproj.AssemblyReference.cache
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje_4.Form1.resources
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje_4.Properties.Resources.resources
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje_4.UnosForma.resources
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.csproj.GenerateResource.cache
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.csproj.CoreCompileInputs.cache
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.exe
+C:\DOKUMENTACIJA\FAX\DOTN\DOTN-master\2019\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.pdb
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\bin\Debug\Predavanje 4.exe.config
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\bin\Debug\Predavanje 4.exe
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\bin\Debug\Predavanje 4.pdb
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.csproj.AssemblyReference.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje_4.Form1.resources
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje_4.Properties.Resources.resources
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje_4.UnosForma.resources
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.csproj.GenerateResource.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.csproj.CoreCompileInputs.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.exe
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje 4\Predavanje 4\obj\Debug\Predavanje 4.pdb

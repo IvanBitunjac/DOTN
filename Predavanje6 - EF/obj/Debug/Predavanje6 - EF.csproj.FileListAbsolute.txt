@@ -1,0 +1,15 @@
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\Predavanje6 - EF.exe.config
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\Predavanje6 - EF.exe
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\Predavanje6 - EF.pdb
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\EntityFramework.dll
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\EntityFramework.xml
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6 - EF.csproj.AssemblyReference.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6___EF.Form1.resources
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6___EF.Properties.Resources.resources
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6 - EF.csproj.GenerateResource.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6 - EF.csproj.CoreCompileInputs.cache
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6 - EF.csproj.CopyComplete
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6 - EF.exe
+C:\DOKUMENTACIJA\FAX\DOTN\PREDAVANJA + LABOSI KOD\PREDAVANJA\Predavanje6 - EF\obj\Debug\Predavanje6 - EF.pdb
