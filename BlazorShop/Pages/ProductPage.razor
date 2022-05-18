@@ -1,0 +1,213 @@
+﻿@page "/product"
+@inject ProductService ProductService
+
+
+@if (products == null)
+{
+    <p><em>Nema proizvoda u bazi</em></p>
+}
+else
+{
+    <div class="container border p-3">
+        <div class="row">
+            <div class="col-5">
+                <h3 class="text-info">Lista proizvoda</h3>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-info form-control" @onclick="AddNewProduct">
+                    Dodaj novi proizvod
+                </button>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Naziv proizvoda</th>
+                        <th>Cijena</th>
+                        <th>Shade color</th>
+                        <th>Kategorija</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var obj in products)
+                    {
+                        <tr>
+                            <td>@obj.Name</td>
+                            <td>@obj.Price</td>
+                            <td>@obj.Color</td>
+                            <td>@obj.Category.Name</td>
+                            <td>
+                                <button class="btn btn-primary" style="width:150px" @onclick="(() => EditProduct(obj))">Uredi</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+@if (showPopup == true)
+{
+    <div class="modal" tabindex="-1" style="display:block" role="dialog">
+        @*u Model definiramo što treba validirati, a u OnValidSubmit koja će se metoda pozvati ako sve prođe ok *@
+        <EditForm Model="@objProduct" OnValidSubmit="@ValidSubmit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-info">@(objProduct.Id != 0 ? "Ažuriraj" : "Unesi") proizvod</h3>
+                        @*Kada kliknemo na X želimo da se zatvori prozor*@
+                        <button type="button" class="close" @onclick="ClosePopup">
+                            <span aria-hidden="true">X</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @*Dodavanje validacije*@
+                        <DataAnnotationsValidator />
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="row py-2">
+                                    <div class="col-4">
+                                        Naziv kategorije
+                                    </div>
+                                    <div class="col-8">
+                                        <select @onchange="CategorySelectionChanged" class="form-control">
+                                            @foreach (var category in categories)
+                                            {
+                                                @*selected - postavljamo da u dropdownu bude odabrana kategorija koja pripada proizvodu*@
+                                                <option value="@category.Id" selected="@(category.Id == objProduct.CategoryId ? true : false)">@category.Name</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-4">
+                                        Naziv proizvoda
+                                    </div>
+                                    <div class="col-8">
+                                        @*drugi način za unos teksta (umjesto input type=text) - ovdje mora ići bind-Value*@
+                                        <InputText class="form-control" @bind-Value="@objProduct.Name" />
+                                        <ValidationMessage For="@(()=>objProduct.Name)"></ValidationMessage>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-4">
+                                        Cijena
+                                    </div>
+                                    <div class="col-8">
+                                        <input class="form-control" type="text" @bind="@objProduct.Price" />
+                                        <ValidationMessage For="@(()=>objProduct.Price)"></ValidationMessage>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-4">
+                                        Boja
+                                    </div>
+                                    <div class="col-8">
+                                        <input class="form-control" type="text" @bind="@objProduct.Color" />
+                                        <ValidationMessage For="@(()=>objProduct.Color)"></ValidationMessage>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="offset-4 col">
+                                        <button class="btn btn-primary form-control" type="submit">Spremi</button>
+                                    </div>
+                                    @if (objProduct.Id > 0)
+                                    {
+                                        <div class="col">
+                                            <button class="btn btn-danger form-control"
+                                                    @onclick="DeleteProduct"
+                                                    type="submit">
+                                                Obriši
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+}
+
+
+@code {
+
+    List<Category> categories;
+    List<Product> products;
+    //unos nove kategorije radimo u popup prozoru
+    bool showPopup = false;
+    Product objProduct = new Product();
+
+    //punimo listu prilikom inicijalizacije stranice
+    protected override void OnInitialized()
+    {
+        products = ProductService.GetProducts();
+    }
+
+    //metoda koja se okine kada kliknemo da želimo unijeti novi proizvod
+    private void AddNewProduct()
+    {
+        objProduct = new Product();
+        categories = ProductService.GetCategoryList();
+        objProduct.CategoryId = categories.ToList()[0].Id;
+        objProduct.Id = 0;
+        showPopup = true;
+    }
+
+    private void ClosePopup()
+    {
+        showPopup = false;
+    }
+
+    //metoda koja se izvrši ako je validacija prošla ok
+    void ValidSubmit()
+    {
+        var result = false;
+        showPopup = false;
+
+        if (objProduct.Id > 0)
+        {
+            result = ProductService.UpdateProduct(objProduct);
+        }
+        else
+        {
+            result = ProductService.CreateProduct(objProduct);
+
+        }
+
+        products = ProductService.GetProducts();
+    }
+
+    private void EditProduct(Product product)
+    {
+        objProduct = product;
+        categories = ProductService.GetCategoryList();
+        showPopup = true;
+    }
+
+    private void DeleteProduct()
+    {
+        showPopup = false;
+        var result = ProductService.DeleteProduct(objProduct);
+        //počisti listu proizvoda
+        products.Clear();
+        //ponovno ih učitaj
+        products = ProductService.GetProducts();
+    }
+
+
+    //postavljanje id-a kategorije kada se neka druga kategorija odabare u DDL
+    private void CategorySelectionChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int id))
+        {
+            objProduct.CategoryId = id;
+        }
+    }
+
+}

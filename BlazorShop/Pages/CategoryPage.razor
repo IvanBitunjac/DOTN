@@ -1,0 +1,168 @@
+﻿@page "/category"
+@inject CategoryService CategoryService
+
+
+<AuthorizeView>
+    <Authorized Context="Auth">
+        @if (categories == null)
+        {
+            <p><em>Nema kategorija u bazi</em></p>
+        }
+        else
+        {
+            <div class="container border p-3">
+                <div class="row">
+                    <div class="col-5">
+                        <h3 class="text-info">Lista kategorija</h3>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-info form-control" @onclick="AddNewCategory">
+                            Dodaj novu kategoriju
+                        </button>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Naziv kategorije</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var obj in categories)
+                            {
+                                <tr>
+                                    <td>@obj.Name</td>
+                                    <td>
+                                        <button class="btn btn-primary" style="width:150px" @onclick="(() => EditCategory(obj))">Uredi</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+
+        @if (showPopup == true)
+        {
+            <div class="modal" tabindex="-1" style="display:block" role="dialog">
+                @*u Model definiramo što treba validirati, a u OnValidSubmit koja će se metoda pozvati ako sve prođe ok *@
+                <EditForm Model="@objCategory" OnValidSubmit="@ValidSubmit">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="text-info">@(objCategory.Id != 0 ? "Ažuriraj" : "Unesi") kategoriju</h3>
+                                @*Kada kliknemo na X želimo da se zatvori prozor*@
+                                <button type="button" class="close" @onclick="ClosePopup">
+                                    <span aria-hidden="true">X</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                @*Dodavanje validacije*@
+                                <DataAnnotationsValidator />
+                                <ValidationSummary />
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="row py-2">
+                                            <div class="col-4">
+                                                Naziv kategorije
+                                            </div>
+                                            <div class="col-8">
+                                                <input class="form-control" type="text" @bind="@objCategory.Name" />
+                                            </div>
+                                        </div>
+                                        <div class="row py-2">
+                                            <div class="offset-4 col">
+                                                <button class="btn btn-primary form-control" type="submit">Spremi</button>
+                                            </div>
+                                            @if (objCategory.Id > 0)
+                                            {
+                                                <div class="col">
+                                                    <button class="btn btn-danger form-control"
+                                                            @onclick="DeleteCategory"
+                                                            type="submit">
+                                                        Obriši
+                                                    </button>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        }
+
+    </Authorized>
+    <NotAuthorized>
+        <p>Niste autorizirani za pregled ove stranice</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+
+
+
+
+    List<Category> categories;
+    //unos nove kategorije radimo u popup prozoru
+    bool showPopup = false;
+    Category objCategory = new Category();
+
+    //punimo listu prilikom inicijalizacije stranice
+    protected override void OnInitialized()
+    {
+        categories = CategoryService.GetCategories();
+    }
+
+    //metoda koja se okine kada kliknemo da želimo unijeti novu kategoriju
+    private void AddNewCategory()
+    {
+        objCategory = new Category();
+        objCategory.Id = 0;
+        showPopup = true;
+    }
+
+    private void ClosePopup()
+    {
+        showPopup = false;
+    }
+
+    //metoda koja se izvrši ako je validacija prošla ok
+    void ValidSubmit()
+    {
+        var result = false;
+        showPopup = false;
+
+        if (objCategory.Id > 0)
+        {
+            result = CategoryService.UpdateCategory(objCategory);
+        }
+        else
+        {
+            result = CategoryService.CreateCategory(objCategory);
+
+        }
+
+        categories = CategoryService.GetCategories();
+    }
+
+    private void EditCategory(Category category)
+    {
+        objCategory = category;
+        showPopup = true;
+    }
+
+    private void DeleteCategory()
+    {
+        showPopup = false;
+        var result = CategoryService.DeleteCategory(objCategory);
+        categories.Clear();
+        categories = CategoryService.GetCategories();
+    }
+
+}
